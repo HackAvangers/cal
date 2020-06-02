@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	<style type="text/css">
+		.button{
+			padding: 10;
+			background-size: 100;
+			body{
+				background-color: red;
+			}
+		}
+	</style>
+	<script>
+		function dispaly(val) {
+			document.getElementById('demo').value+=val;
+		}
+		function solve() {
+			var x,y;
+			x=document.getElementById('demo').value;
+			y=eval(x);
+			document.getElementById('demo').value=y;
+		   }
+
+
+		function clr() {
+			document.getElementById('demo').value="";
+		}
+	</script>
+	<div>
+	<input type="text" name="" placeholder="00" id="demo">
+		<table border="1" style="border-collapse:collapse;">
+		<tr><td><input type="button" value="9" onclick="dispaly(9)"></td>
+			<td><input type="button" value="8" onclick="dispaly(8)"></td>
+		    <td><input type="button" value="7" onclick="dispaly(7)"></td>
+		</tr>
+		<tr><td><input type="button" value="4" onclick="dispaly(4)"></td>
+			<td><input type="button" value="5" onclick="dispaly(5)"></td>
+		    <td><input type="button" value="6" onclick="dispaly(6)"></td>
+		</tr>
+		<tr><td><input type="button" value="1" onclick="dispaly(1)"></td>
+			<td><input type="button" value="2" onclick="dispaly(2)"></td>
+		    <td><input type="button" value="3" onclick="dispaly(3)"></td>
+		</tr>
+		<tr><td><input type="button" value="*" onclick="dispaly('*')"></td>
+			<td><input type="button" value="/" onclick="dispaly('/')"></td>
+		    <td><input type="button" value="+" onclick="dispaly('+')"></td>
+		</tr>
+		<tr><td><input type="button" value="-" onclick="dispaly('-')"></td>
+			<td><input type="button" value="." onclick="dispaly('.')"></td>
+		    <td><input type="button" value="=" onclick="solve()"></td>
+		</tr>
+		<tr><th  colspan="3"><input type="button" value="clear" onclick="clr()"></th>
+	    </table>
+    </div>
+</body>
+</html>
